@@ -1,5 +1,4 @@
 let option = ["rock", "paper", "scissors"];
-
 let userScore = 0;
 let computerScore = 0;
 let drawScore = 0;
@@ -14,8 +13,7 @@ function getComputerChoice() {
   return randomChoice;
 }
 
-// getComputerChoice
-// get user input
+
 function getUserChoice() {
   let userInput = prompt("Dear Player\nRock, Paper, Scissors: ");
   if (option.includes(userInput.toLowerCase())) {
@@ -25,10 +23,8 @@ function getUserChoice() {
   }
 }
 
-// getUserChoice()
-
 function playRound(userChoice, computerChoice) {
-  // getUserChoice()
+  
 
   if (userChoice == "rock" && computerChoice == "scissors") {
     userWin = true;
