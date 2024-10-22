@@ -11,7 +11,7 @@ let userWin = false;
 let computerWin = false;
 let draw = false;
 
-const container = document.querySelector(".container");
+const container = document.querySelector(".game-container");
 const div = document.createElement("div");
 const rock = document.createElement("button");
 const paper = document.createElement("button");
@@ -25,12 +25,13 @@ let gameStatus = document.createElement("p");
 let showScore = document.createElement("p");
 let winStatus = document.createElement("h3");
 
-h1.textContent = "Welcome to the Rock Paper Scissors Game";
+h1.textContent = "Rock Paper Scissors";
 p.textContent = "Choose between the buttons below";
 rock.textContent = "Rock";
 paper.textContent = "Paper";
 scissors.textContent = "Scissors";
 playAgain.textContent = "Play Again";
+playAgain.className = "play-again"
 gameStatus.textContent;
 winStatus.textContent;
 
@@ -45,11 +46,11 @@ container.appendChild(p);
 div.appendChild(rock);
 div.appendChild(paper);
 div.appendChild(scissors);
+div.appendChild(playAgain);
 container.appendChild(gameStatus);
 container.appendChild(showScore);
 container.appendChild(div);
 container.appendChild(winStatus);
-container.appendChild(playAgain);
 
 function getUserChoice(event) {
   let a = event.target.textContent.toLowerCase();
@@ -82,7 +83,7 @@ function playRound(userChoice, computerChoice) {
   } else if (userChoice == computerChoice) {
     draw = true;
     drawScore += 1;
-    gameStatus.textContent = "That was a draw";
+    gameStatus.textContent = `That was a draw\nYou choose ${userChoice}, Computer choose ${computerChoice}`;
   }
 
   if (userWin) {
@@ -127,7 +128,7 @@ function playGame() {
     scissors.disabled = true;
     paper.disabled = true;
 
-    playAgain.style.display = "block";
+    playAgain.style.display = "inline"
 
     
   }
